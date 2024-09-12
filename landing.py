@@ -40,36 +40,87 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Projects Section
+
+# Custom CSS for card styling
 st.markdown("""
-<div class="bg-gray-100 py-12">
+    <style>
+    .card {
+        background-color: #f9f9f9;
+        padding: 20px;
+        margin: 5px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+        height: 200px;
+        text-align: center;
+    }
+    .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    }
+    .title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+# Title for the whole section
+st.markdown('<h2 class="text-3xl font-semibold text-center">My Projects</h2>', unsafe_allow_html=True)
+
+# List of project titles
+projectTitle = ["RFI Generator for Sourcing Agents", "Luxury Handbag Price Tracker for Investors", "Influencer Campaign Management Tool"]
+projectDescription = ["Automate and streamline the Request for Information process for sourcing agents.", "A real-time price tracking tool for luxury handbags, designed for collectors and investors.", "An all-in-one platform for online brands to manage and optimize influencer marketing campaigns."]
+projectLink = ["https://github.com/jeromecoffin/sourcing", "https://github.com/jeromecoffin/scraper", "https://github.com/jeromecoffin/instafollower"]
+# Create a container for the project cards
+container = st.container()
+
+# Create a 3-column layout for the project cards
+row1 = container.columns(3)
+
+# Display each project title in a styled "card"
+for idx, col in enumerate(row1):
+    with col:
+        st.markdown(f"""
+        <div class="card">
+            <div class="title">{projectTitle[idx]}</div>
+            <p>{projectDescription[idx]}</p>
+            <a href="{projectLink[idx]}" class="text-indigo-600 hover:underline text-xl">Learn More</a>
+        </div>
+        """, unsafe_allow_html=True)
+
+# Medium Section
+st.markdown("""
+    <div class="text-center py-8">
   <div class="max-w-7xl mx-auto px-4">
-    <h2 class="text-3xl font-semibold text-center mb-12">My Projects</h2>
+    <h2 class="text-3xl font-semibold text-center">My Medium</h2>
+    <a href="https://medium.com/@jerome.devops" class="text-indigo-600 hover:underline text-xl">@jerome.devops</a>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
   
-  <!-- Project 1 -->
+  <!-- Medium 1 -->
   <div class="bg-white shadow-lg rounded-lg p-6">
-    <h3 class="text-xl font-semibold mb-4">Luxury Handbag Price Tracker</h3>
-    <p class="text-gray-600 mb-4">A real-time price tracking tool for luxury handbags, designed for collectors and investors.</p>
-    <a href="https://github.com/jeromecoffin" class="text-indigo-600 hover:underline">Learn More</a>
+    <h3 class="text-xl font-semibold mb-4">The end of docker-compose</h3>
+    <p class="text-gray-600 mb-4">It turns out that this docker-compose is now obsolete in CLI V2.</p>
+    <a href="https://medium.com/@jerome.devops/the-end-of-docker-compose-e3b7d15330e2" class="text-indigo-600 hover:underline">Learn More</a>
   </div>
 
-  <!-- Project 2 -->
+  <!-- Medium 2 -->
   <div class="bg-white shadow-lg rounded-lg p-6">
-    <h3 class="text-xl font-semibold mb-4">Influencer Campaign Management Tool</h3>
-    <p class="text-gray-600 mb-4">An all-in-one platform for online brands to manage and optimize influencer marketing campaigns.</p>
-    <a href="https://github.com/jeromecoffin" class="text-indigo-600 hover:underline">Learn More</a>
+    <h3 class="text-xl font-semibold mb-4">Streamlit on HTTPS for beginners</h3>
+    <p class="text-gray-600 mb-4">Here is a quick, up-to-date explanation of how to set up Streamlit on HTTPS behind Nginx.</p>
+    <a href="https://medium.com/@jerome.devops/finally-streamlit-on-https-for-beginners-4543d7793005" class="text-indigo-600 hover:underline">Learn More</a>
   </div>
 
-  <!-- Project 3 -->
+  <!-- Medium 3 -->
   <div class="bg-white shadow-lg rounded-lg p-6">
-    <h3 class="text-xl font-semibold mb-4">RFI Generator for Sourcing Agents</h3>
-    <p class="text-gray-600 mb-4">Automate and streamline the Request for Information process with this powerful tool built for sourcing agents.</p>
-    <a href="https://github.com/jeromecoffin" class="text-indigo-600 hover:underline">Learn More</a>
+    <h3 class="text-xl font-semibold mb-4">Dirty Coffee in Chiang Mai</h3>
+    <p class="text-gray-600 mb-4">My recent stay in Chiang Mai, surprised me with some of the best Arabica beans I’ve ever tasted.</p>
+    <a href="https://medium.com/@jerome.devops/dirty-coffee-in-chiang-mai-363b7211952d" class="text-indigo-600 hover:underline">Learn More</a>
   </div>
 
 </div>
   </div>
-</div>
+            </div>
 """, unsafe_allow_html=True)
 
 # Instagram Section
